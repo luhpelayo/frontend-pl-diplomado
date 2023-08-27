@@ -20,12 +20,14 @@ const Container = styled.div`
 const Title = styled.h2``;
 
 function App() {
+  const  apiUrl = process.env.REACT_APP_API_URL;
+  console.log(apiUrl);
   const [users, setUsers] = useState([]);
   const [onEdit, setOnEdit] = useState(null);
 
   const getUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8800");
+      const res = await axios.get(apiUrl);
       setUsers(res.data.sort((a, b) => (a.nome > b.nome ? 1 : -1)));
     } catch (error) {
       toast.error(error);
