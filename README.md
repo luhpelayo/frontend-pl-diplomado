@@ -1,5 +1,15 @@
-# Getting Started with Create React App
+# Front End para diploamdo crear image docker proyecto personal
+[![1.png](https://i.postimg.cc/g0y71Wdr/1.png)](https://postimg.cc/VS64b2Jc) 
 
+[![2.png](https://i.postimg.cc/LXXVvK8c/2.png)](https://postimg.cc/bG7bN5bg)
+
+[![3.png](https://i.postimg.cc/VsJxL2WZ/3.png)](https://postimg.cc/XX0HsHh9)
+
+[![4.png](https://i.postimg.cc/SsJvRzCY/4.png)](https://postimg.cc/47R5Fy8X)
+
+[![5.png](https://i.postimg.cc/bvFm7NWy/5.png)](https://postimg.cc/5HL5v1fT)
+
+# Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
