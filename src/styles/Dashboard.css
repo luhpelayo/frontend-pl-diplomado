@@ -361,3 +361,20 @@ nav ul li:hover::after {
 
 
 
+/* Estilos para el logo */
+.logo {
+  color: #ffffff; /* Cambia el color del texto a blanco */
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  /* Estilos para pantalla mediana */
+  @media (max-width: 991px) {
+    font-size: 1.5em;
+  }
+
+  /* Estilos para pantalla pequeña */
+  @media (max-width: 767px) {
+    font-size: 1.2em;
+  }
+}

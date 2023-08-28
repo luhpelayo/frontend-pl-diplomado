@@ -31,7 +31,7 @@ function Dashboard() {
         <h3>DE VIAJES</h3>
         <p>
           Somos una Agencia de viajes que brinde los mejores servicios turísticos superando las expectativas
-          de nuestros pasajeros dando a conocer las riquezas de nuestro Perú y destinos exóticos internacionales.
+          de nuestros pasajeros dando a conocer las riquezas de nuestra Bolivia y destinos exóticos internacionales.
         </p>
         <a href="#">Explorar</a>
       </div>
@@ -46,15 +46,7 @@ function Dashboard() {
           <a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png" alt="Instagram" /></a>
         </li>
       </ul>
-      <button className="toggle" onClick={toggleMenu}>
-        <div className={`menu ${isActive ? 'active' : ''}`}>
-          <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </div>
-      </button>
+      
     </div>
   );
 }
