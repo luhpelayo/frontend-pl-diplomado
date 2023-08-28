@@ -41,7 +41,7 @@ const Button = styled.button`
 
 const Form = ({ getUsers, onEdit, setOnEdit }) => {
   const ref = useRef();
-
+  const  apiUrl = process.env.REACT_APP_API_URL;
   useEffect(() => {
     if (onEdit) {
       const user = ref.current;
@@ -69,7 +69,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
     if (onEdit) {
       await axios
-        .put("http://localhost:8800/" + onEdit.id, {
+        .put(apiUrl + onEdit.id, {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,
@@ -79,7 +79,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         .catch(({ data }) => toast.error(data));
     } else {
       await axios
-        .post("http://localhost:8800", {
+        .post(apiUrl, {
           nome: user.nome.value,
           email: user.email.value,
           fone: user.fone.value,

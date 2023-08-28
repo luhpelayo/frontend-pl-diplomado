@@ -1,54 +1,36 @@
-import GlobalStyle from "./styles/global";
-import styled from "styled-components";
-import Form from "./components/Form.js";
-import Grid from "./components/Grid";
-import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import React from 'react';
 
-const Container = styled.div`
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-`;
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Usuarios from './components/Usuarios';
+import NotFound from './components/NotFound';
+import Contacto from './components/Contacto';
+import { Link } from 'react-router-dom';
 
-const Title = styled.h2``;
 
-function App() {
-  const  apiUrl = process.env.REACT_APP_API_URL;
-  console.log(apiUrl);
-  const [users, setUsers] = useState([]);
-  const [onEdit, setOnEdit] = useState(null);
-
-  const getUsers = async () => {
-    try {
-      const res = await axios.get(apiUrl);
-      setUsers(res.data.sort((a, b) => (a.nome > b.nome ? 1 : -1)));
-    } catch (error) {
-      toast.error(error);
-    }
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, [setUsers]);
-
+const App = () => {
   return (
-    <>
-      <Container>
-        <Title>USUÁRIOS</Title>
-        <Form onEdit={onEdit} setOnEdit={setOnEdit} getUsers={getUsers} />
-        <Grid setOnEdit={setOnEdit} users={users} setUsers={setUsers} />
-      </Container>
-      <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
-      <GlobalStyle />
-    </>
+    <Router>
+            <header>
+        <h2 className="logo">EMPRESA PL</h2>
+        <div className="container">
+          <nav>
+            <ul>
+              <li><Link to="/" className="nav-link">Inicio</Link></li>
+              <li><Link to="/Clientes" className="nav-link">Clientes</Link></li>
+              <li><Link to="/Contacto" className="nav-link">Contacto</Link></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/Clientes" element={<Usuarios />} />
+        <Route path="/Contacto" element={<Contacto />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
